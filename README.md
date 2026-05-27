@@ -57,10 +57,4 @@ EPEC2026_PCKF_ML_v2/
 └── results/
 ```
 
-## Key Changes vs v1
-- `wind_to_power.m` added -- cubic power curve, matches paper exactly
-- `swing_eq_discrete.m` uses `Pm_eff = Tm - Pw(v_t)` not raw Tm
-- `collocation_pts.m` ordering matches paper Eq. (cp): positive→negative→center
-- `nll_loss.m` uses correct 1/2 factors: `log(sigma) + (y-mu)^2/(2*sigma^2)`
-- `config.m` has wind turbine params (v_ci, v_r, v_co, P_r) and correct d0
-- All simulation scripts use `wind_to_power()` for physics-consistent disturbance
+
