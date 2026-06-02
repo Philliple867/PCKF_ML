@@ -26,7 +26,7 @@ Source: NREL WTK, Kahuku Wind Farm, Hawaii (21.667°N, 157.952°W), 100 m hub.
 
 ## Project Structure
 ```
-EPEC2026_PCKF_ML_v2/
+EPEC2026_PCKF_ML/
 ├── run_all.m
 ├── config.m
 ├── data/
