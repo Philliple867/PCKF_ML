@@ -26,7 +26,7 @@ Source: NREL WTK, Kahuku Wind Farm, Hawaii (21.667°N, 157.952°W), 100 m hub.
 
 ## Project Structure
 ```
-EPEC2026_PCKF_ML_v2/
+EPEC2026_PCKF_ML/
 ├── run_all.m
 ├── config.m
 ├── data/
@@ -42,19 +42,19 @@ EPEC2026_PCKF_ML_v2/
 │   ├── filters/
 │   │   ├── pckf.m            <- PCKF, Xu 2019 Eqs. 14-30
 │   │   ├── ekf.m             <- EKF baseline
-│   │   ├── collocation_pts.m <- Xi matrix (paper Eq. cp)
+│   │   ├── collocation_pts.m <- Xi matrix 
 │   │   └── gpc_basis.m       <- Hhat matrix
 │   ├── microgrid/
 │   │   ├── swing_eq.m
 │   │   ├── swing_eq_discrete.m
-│   │   ├── wind_to_power.m   <- cubic power curve (paper Eq. power_curve)
+│   │   ├── wind_to_power.m   <- cubic power curve 
 │   │   ├── pmu_model.m
 │   │   └── mg_params.m
 │   └── utils/
 │       ├── sliding_window.m
-│       ├── nll_loss.m        <- Gaussian NLL (paper Eq. NLL)
+│       ├── nll_loss.m        <- Gaussian NLL 
 │       └── rmse_metrics.m
 └── results/
-```
+
 
 
