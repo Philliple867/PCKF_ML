@@ -62,7 +62,7 @@ for mc = 1:N_MC
     cpu_e(mc)=toc(t0);
     [rmse_e(mc,1),rmse_e(mc,2)]=rmse_metrics(x_true,ee);
 
-    % PCKF-fixed
+    % PCKF-[1]
     xf=x0; Pf=cfg.P0; ef=zeros(Nsteps,2);
     t0=tic;
     for k=1:Nsteps
