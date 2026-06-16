@@ -1,5 +1,5 @@
 function z = pmu_model(x, params)
-% PMU observation model -- paper Eqs. (Pe)(Qe).
+% PMU observation model 
 % z = [Pe; Qe]
 
 delta = x(1);
