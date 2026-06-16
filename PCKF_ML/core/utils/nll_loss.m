@@ -13,7 +13,7 @@ log_sigma = max(min(log_sigma, dlarray(lsig_max)), dlarray(lsig_min));
 sigma     = exp(log_sigma);
 
 % Gaussian NLL: log(sigma) + (y-mu)^2/(2*sigma^2)
-% Equivalent to (1/2)*ln(sigma^2) + (y-mu)^2/(2*sigma^2) -- paper Eq. (nll)
+% Equivalent to (1/2)*ln(sigma^2) + (y-mu)^2/(2*sigma^2) 
 nll  = log(sigma) + (ybatch - mu).^2 ./ (2*sigma.^2);
 loss = mean(nll);
 end
