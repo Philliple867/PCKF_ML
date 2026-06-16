@@ -1,5 +1,5 @@
 function dxdt = swing_eq(~, x, params)
-% Swing equations (continuous) -- paper Eqs. (delta)(omega).
+% Swing equations (continuous)
 % params.Pm_eff = T_m - P_w(v_t)
 
 Pe = (params.E/params.Xd) * params.V * sin(x(1) - params.theta);
