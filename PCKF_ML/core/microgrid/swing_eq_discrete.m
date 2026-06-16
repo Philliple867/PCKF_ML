@@ -1,7 +1,7 @@
 function x_next = swing_eq_discrete(x, params)
 % RK4 one-step integration of swing equations.
 % params.Pm_eff = T_m - P_w(v_t) is the effective mechanical power
-% at the current timestep -- matches paper Eq. (omega).
+% at the current timestep 
 
 dt = params.dt;
 k1 = rhs(x,             params);
