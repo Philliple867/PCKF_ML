@@ -29,7 +29,7 @@ if isfile(cfg.f_lstm)
 
     seg_mu  = lstm.mu_wind(best_i:best_i+win-1);
     seg_sig = lstm.sigma_wind(best_i:best_i+win-1);
-    t_seg   = linspace(0, cfg.T, win)';  % map win hours → 100s
+    t_seg   = linspace(0, cfg.T, win)';  
 
     v_mean   = max(interp1(t_seg, seg_mu,  t_vec, 'pchip'), 0);
     sig_wind = max(interp1(t_seg, seg_sig, t_vec, 'pchip'), 0.05);
@@ -38,7 +38,7 @@ if isfile(cfg.f_lstm)
     fprintf('sigma range: [%.3f, %.3f] m/s\n', min(sig_wind), max(sig_wind));
     fprintf('v_mean range: [%.3f, %.3f] m/s\n', min(v_mean), max(v_mean));
 else
-    % fallback synthetic
+    % fallback
     sc = cfg.scenario;
     for s = 1:size(sc,1)
         idx = t_vec >= sc(s,1) & t_vec < sc(s,2);
@@ -48,7 +48,7 @@ else
     fprintf('lstm_output.csv not found -- using synthetic\n');
 end
 
-%% ground truth
+%% ground
 x0      = [cfg.d0; cfg.w0];
 x_true  = zeros(cfg.Nsteps, 2);
 Pm_true = zeros(cfg.Nsteps, 1);
