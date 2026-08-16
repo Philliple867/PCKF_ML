@@ -41,14 +41,14 @@ cfg.theta = 0.00;     % terminal voltage angle [rad]
 cfg.ws   = 2*pi*60;   % synchronous speed [rad/s]
 cfg.Tm   = 0.80;      % diesel mechanical power setpoint [pu]
 
-%% wind turbine (matches paper Section IV-A, Eq. power_curve)
+%% wind turbine 
 cfg.v_ci = 3.5;       % cut-in speed [m/s]
 cfg.v_r  = 12.0;      % rated speed [m/s]
 cfg.v_co = 25.0;      % cut-out speed [m/s]
 cfg.P_r  = 0.30;      % rated wind power [pu]
 
 % steady-state operating point WITH wind at Kahuku mean speed (7.9 m/s)
-% P_m_eff = T_m - P_w(v_mean)  -- from paper Eq. P_m_eff
+% P_m_eff = T_m - P_w(v_mean)  
 v_nom   = 7.9;
 Pw_nom  = cfg.P_r * (v_nom^3 - cfg.v_ci^3) / (cfg.v_r^3 - cfg.v_ci^3);
 cfg.Pm_eff_nom = cfg.Tm - Pw_nom;   % ≈ 0.720 pu
