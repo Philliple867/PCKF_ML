@@ -6,7 +6,7 @@ function Pw = wind_to_power(v, cfg)
 %   Pw = P_r                                v_r <= v <= v_co
 %
 % v can be a scalar or array.
-% Returns Pw in per unit [pu], same base as cfg.P_r.
+
 
 v_ci = cfg.v_ci;   % 3.5 m/s
 v_r  = cfg.v_r;    % 12.0 m/s
@@ -21,5 +21,5 @@ idx_rated = (v >= v_r)  & (v <= v_co);
 Pw(idx_cubic) = P_r * (v(idx_cubic).^3 - v_ci^3) / (v_r^3 - v_ci^3);
 Pw(idx_rated) = P_r;
 
-% below cut-in and above cut-out: Pw = 0 (already initialized)
+% below cut-in and above cut-out: Pw = 0 
 end
